@@ -12,7 +12,9 @@ const db = require('knex')({
     connection: {
       //host : process.env.DATABASE_URL,
       connectionString: process.env.DATABASE_URL,
-      ssl: true,
+      ssl: {
+          rejectUnauthorized: false
+      }
       //user : 'postgres',
       //password : 'gabriel21',
       //database : 'smart-brain'
