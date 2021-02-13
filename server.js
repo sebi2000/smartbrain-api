@@ -11,13 +11,14 @@ const db = require('knex')({
     client: 'pg',
     connection: {
       //host : process.env.DATABASE_URL,
-      connectionString: process.env.DATABASE_URL,
-      ssl: {
-          rejectUnauthorized: false
-      }
-      //user : 'postgres',
-      //password : 'gabriel21',
-      //database : 'smart-brain'
+     // connectionString: process.env.DATABASE_URL,
+    //   ssl: {
+    //       rejectUnauthorized: false
+    //   }
+      host : '127.0.0.1',
+      user : 'postgres',
+      password : 'gabriel21',
+      database : 'smart-brain'
     }
   });
 
@@ -70,7 +71,8 @@ app.get('/', (req,res) => {
     //res.send(database.users);
 })*/
 
-app.listen(process.env.PORT || 3000, ()=> {
-    console.log(`app is running on port ${process.env.PORT}`);
+//process.env.PORT
+app.listen( 3000, ()=> {
+    console.log(`app is running on port 3000`);
 })
 
